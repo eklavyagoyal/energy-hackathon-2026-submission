@@ -1,0 +1,22 @@
+# Warden backend dependencies (Python 3.11+; built and tested on 3.13).
+# pandapower pulls numpy, pandas, scipy, networkx.
+pandapower>=2.14
+# numba accelerates pandapower's Newton-Raphson kernels; the battery
+# verification loop (K+1 full N-1 sweeps) depends on it to stay under
+# the 10 s acceptance budget on case118. Optional at runtime: pandapower
+# falls back to pure numpy with a warning if numba is unavailable.
+numba
+
+# API layer
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+
+# LLM narration (optional at runtime: the deterministic template
+# narrator is used when no ANTHROPIC_API_KEY is configured)
+anthropic>=0.25
+
+# Tests
+pytest>=8.0
+httpx>=0.27
+python-dotenv

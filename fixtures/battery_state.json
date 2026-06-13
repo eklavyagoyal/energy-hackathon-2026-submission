@@ -1,0 +1,75 @@
+{
+  "scenario_id": "demo_congestion",
+  "base_case": {
+    "converged": true,
+    "max_line_loading_pct": 58.09126102642088,
+    "n_overloads": 0,
+    "min_vm_pu": 0.9804659589382343,
+    "max_vm_pu": 1.0400000000000003,
+    "n_voltage_violations": 0,
+    "total_load_mw": 4794.0
+  },
+  "security": {
+    "n_contingencies_scanned": 187,
+    "n_insecure": 15,
+    "baseline_ms": 6699.6,
+    "worst": [
+      {
+        "contingency_id": "ext_grid_0",
+        "outage_name": "ext_grid 0 (bus 68)",
+        "status": "FULL_BLACKOUT",
+        "severity": {
+          "score": 2000.0,
+          "band": "CRITICAL",
+          "cascade_depth": 0,
+          "load_shed_mw": 4794.0
+        }
+      },
+      {
+        "contingency_id": "trafo_8",
+        "outage_name": "trafo 8 (bus 67 to bus 68)",
+        "status": "CASCADE",
+        "severity": {
+          "score": 1019.7663746349604,
+          "band": "HIGH",
+          "cascade_depth": 2,
+          "load_shed_mw": 4697.0
+        }
+      },
+      {
+        "contingency_id": "line_89",
+        "outage_name": "line 89 (bus 37 to bus 64)",
+        "status": "CASCADE",
+        "severity": {
+          "score": 322.20275344180226,
+          "band": "HIGH",
+          "cascade_depth": 3,
+          "load_shed_mw": 1257.0
+        }
+      },
+      {
+        "contingency_id": "line_6",
+        "outage_name": "line 6 (bus 7 to bus 8)",
+        "status": "CASCADE",
+        "severity": {
+          "score": 286.9253233208177,
+          "band": "HIGH",
+          "cascade_depth": 4,
+          "load_shed_mw": 992.0
+        }
+      },
+      {
+        "contingency_id": "line_7",
+        "outage_name": "line 7 (bus 8 to bus 9)",
+        "status": "CASCADE",
+        "severity": {
+          "score": 286.9253233208177,
+          "band": "HIGH",
+          "cascade_depth": 4,
+          "load_shed_mw": 992.0
+        }
+      }
+    ]
+  },
+  "opf_available": true
+}

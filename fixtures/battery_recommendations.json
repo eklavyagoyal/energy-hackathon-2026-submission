@@ -1,0 +1,337 @@
+{
+  "candidates": [
+    {
+      "bus_idx": 14,
+      "bus_name": "15",
+      "score": 0.16122994652406417,
+      "score_breakdown": {
+        "congestion": 0.0053475935828877,
+        "voltage": 0.0,
+        "cascade": 0.0374331550802139,
+        "severity": 1.0
+      },
+      "context": {
+        "total_scenarios": 187,
+        "congestion_count": 1,
+        "voltage_count": 0,
+        "cascade_count": 7,
+        "worst_line": 24,
+        "worst_line_loading_pct": 107.02453838370276,
+        "min_voltage_pu": 1.0099999999999996,
+        "max_voltage_pu": 1.0100000000000005,
+        "worst_voltage_pu": null,
+        "worst_voltage_dir": "none",
+        "severity_shed_sum_mw": 13472.0
+      },
+      "verification": {
+        "bus_idx": 14,
+        "battery_p_mw": 50.0,
+        "battery_max_e_mwh": 200.0,
+        "n_scenarios": 187,
+        "scenarios_improved": 6,
+        "scenarios_unchanged": 179,
+        "scenarios_worsened": 2,
+        "cascades_prevented": 1,
+        "mw_load_shed_avoided": 2834.0,
+        "avg_voltage_improvement": -4.652365452866994e-6,
+        "max_loading_reduction": 107.02453838370276,
+        "verdict": "RECOMMENDED",
+        "per_contingency": [
+          {
+            "contingency_id": "line_6",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_7",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_21",
+            "status_before": "VIOLATIONS",
+            "status_after": "CASCADE",
+            "score_before": 1.0,
+            "score_after": 20.0,
+            "load_shed_before_mw": 0.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_34",
+            "status_before": "VIOLATIONS",
+            "status_after": "VIOLATIONS",
+            "score_before": 2.0,
+            "score_after": 1.0,
+            "load_shed_before_mw": 0.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_89",
+            "status_before": "CASCADE",
+            "status_after": "SECURE",
+            "score_before": 322.20275344180226,
+            "score_after": 0.0,
+            "load_shed_before_mw": 1257.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "trafo_0",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 111.69545264914476,
+            "score_after": 285.6737588652482,
+            "load_shed_before_mw": 430.0,
+            "load_shed_after_mw": 986.0
+          },
+          {
+            "contingency_id": "trafo_3",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 124.66416353775553,
+            "score_after": 104.66416353775553,
+            "load_shed_before_mw": 310.0,
+            "load_shed_after_mw": 310.0
+          },
+          {
+            "contingency_id": "trafo_8",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 1019.7663746349604,
+            "score_after": 988.6858573216521,
+            "load_shed_before_mw": 4697.0,
+            "load_shed_after_mw": 4548.0
+          }
+        ],
+        "computation_time_ms": 3203.467899998941
+      },
+      "narration": "Bus 14 ranks 1 of 117 candidate buses (score 0.16): line 24 connected to it reached 107.0 percent loading in 1 of 187 N-1 scenarios; it sat in the cascade chain or an islanded component in 7 scenarios. A battery at this bus injects active power at the stressed node itself, so the relief lands on the exact corridor and voltage zone the contingencies hit instead of depending on remote redispatch across the same congested paths. The solver-verified counterfactual with a 50.0 MW / 200.0 MWh unit improves 6 of 187 N-1 scenarios, prevents 1 cascades and avoids 2834.0 MW of load shedding, with 2 scenarios worsened (verdict RECOMMENDED).",
+      "narration_source": "template"
+    },
+    {
+      "bus_idx": 18,
+      "bus_name": "19",
+      "score": 0.1569769980438731,
+      "score_breakdown": {
+        "congestion": 0.0106951871657754,
+        "voltage": 0.0,
+        "cascade": 0.03208556149732621,
+        "severity": 0.9680819477434679
+      },
+      "context": {
+        "total_scenarios": 187,
+        "congestion_count": 2,
+        "voltage_count": 0,
+        "cascade_count": 6,
+        "worst_line": 24,
+        "worst_line_loading_pct": 107.02453838370276,
+        "min_voltage_pu": 1.0099999999999993,
+        "max_voltage_pu": 1.0100000000000007,
+        "worst_voltage_pu": null,
+        "worst_voltage_dir": "none",
+        "severity_shed_sum_mw": 13042.0
+      },
+      "verification": {
+        "bus_idx": 18,
+        "battery_p_mw": 50.0,
+        "battery_max_e_mwh": 200.0,
+        "n_scenarios": 187,
+        "scenarios_improved": 6,
+        "scenarios_unchanged": 180,
+        "scenarios_worsened": 1,
+        "cascades_prevented": 1,
+        "mw_load_shed_avoided": 2834.0,
+        "avg_voltage_improvement": -1.5930200891394013e-6,
+        "max_loading_reduction": 47.31538746276823,
+        "verdict": "RECOMMENDED",
+        "per_contingency": [
+          {
+            "contingency_id": "line_6",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_7",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_21",
+            "status_before": "VIOLATIONS",
+            "status_after": "SECURE",
+            "score_before": 1.0,
+            "score_after": 0.0,
+            "load_shed_before_mw": 0.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_89",
+            "status_before": "CASCADE",
+            "status_after": "SECURE",
+            "score_before": 322.20275344180226,
+            "score_after": 0.0,
+            "load_shed_before_mw": 1257.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "trafo_0",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 111.69545264914476,
+            "score_after": 285.6737588652482,
+            "load_shed_before_mw": 430.0,
+            "load_shed_after_mw": 986.0
+          },
+          {
+            "contingency_id": "trafo_3",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 124.66416353775553,
+            "score_after": 104.66416353775553,
+            "load_shed_before_mw": 310.0,
+            "load_shed_after_mw": 310.0
+          },
+          {
+            "contingency_id": "trafo_8",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 1019.7663746349604,
+            "score_after": 988.6858573216521,
+            "load_shed_before_mw": 4697.0,
+            "load_shed_after_mw": 4548.0
+          }
+        ],
+        "computation_time_ms": 3177.8287999986787
+      },
+      "narration": "Bus 18 ranks 2 of 117 candidate buses (score 0.16): line 24 connected to it reached 107.0 percent loading in 2 of 187 N-1 scenarios; it sat in the cascade chain or an islanded component in 6 scenarios. A battery at this bus injects active power at the stressed node itself, so the relief lands on the exact corridor and voltage zone the contingencies hit instead of depending on remote redispatch across the same congested paths. The solver-verified counterfactual with a 50.0 MW / 200.0 MWh unit improves 6 of 187 N-1 scenarios, prevents 1 cascades and avoids 2834.0 MW of load shedding, with 1 scenarios worsened (verdict RECOMMENDED).",
+      "narration_source": "template"
+    },
+    {
+      "bus_idx": 0,
+      "bus_name": "1",
+      "score": 0.15644144480292657,
+      "score_breakdown": {
+        "congestion": 0.0053475935828877,
+        "voltage": 0.0,
+        "cascade": 0.03208556149732621,
+        "severity": 0.9769893111638955
+      },
+      "context": {
+        "total_scenarios": 187,
+        "congestion_count": 1,
+        "voltage_count": 0,
+        "cascade_count": 6,
+        "worst_line": 0,
+        "worst_line_loading_pct": 86.439344800974,
+        "min_voltage_pu": 1.0099999999999996,
+        "max_voltage_pu": 1.0100000000000005,
+        "worst_voltage_pu": null,
+        "worst_voltage_dir": "none",
+        "severity_shed_sum_mw": 13162.0
+      },
+      "verification": {
+        "bus_idx": 0,
+        "battery_p_mw": 50.0,
+        "battery_max_e_mwh": 200.0,
+        "n_scenarios": 187,
+        "scenarios_improved": 6,
+        "scenarios_unchanged": 181,
+        "scenarios_worsened": 0,
+        "cascades_prevented": 1,
+        "mw_load_shed_avoided": 3390.0,
+        "avg_voltage_improvement": -2.9094898687015804e-6,
+        "max_loading_reduction": 23.307538439106303,
+        "verdict": "RECOMMENDED",
+        "per_contingency": [
+          {
+            "contingency_id": "line_6",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_7",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 286.9253233208177,
+            "score_after": 22.0,
+            "load_shed_before_mw": 992.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_34",
+            "status_before": "VIOLATIONS",
+            "status_after": "VIOLATIONS",
+            "score_before": 2.0,
+            "score_after": 1.0,
+            "load_shed_before_mw": 0.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "line_89",
+            "status_before": "CASCADE",
+            "status_after": "SECURE",
+            "score_before": 322.20275344180226,
+            "score_after": 0.0,
+            "load_shed_before_mw": 1257.0,
+            "load_shed_after_mw": 0.0
+          },
+          {
+            "contingency_id": "trafo_3",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 124.66416353775553,
+            "score_after": 104.66416353775553,
+            "load_shed_before_mw": 310.0,
+            "load_shed_after_mw": 310.0
+          },
+          {
+            "contingency_id": "trafo_8",
+            "status_before": "CASCADE",
+            "status_after": "CASCADE",
+            "score_before": 1019.7663746349604,
+            "score_after": 988.6858573216521,
+            "load_shed_before_mw": 4697.0,
+            "load_shed_after_mw": 4548.0
+          }
+        ],
+        "computation_time_ms": 2976.0395000048447
+      },
+      "narration": "Bus 0 ranks 3 of 117 candidate buses (score 0.16): line 0 connected to it reached 86.4 percent loading in 1 of 187 N-1 scenarios; it sat in the cascade chain or an islanded component in 6 scenarios. A battery at this bus injects active power at the stressed node itself, so the relief lands on the exact corridor and voltage zone the contingencies hit instead of depending on remote redispatch across the same congested paths. The solver-verified counterfactual with a 50.0 MW / 200.0 MWh unit improves 6 of 187 N-1 scenarios, prevents 1 cascades and avoids 3390.0 MW of load shedding, with no scenario worsened (verdict RECOMMENDED).",
+      "narration_source": "template"
+    }
+  ],
+  "computation_time_ms": 3219.5274000041536,
+  "baseline_cached": true,
+  "n_scenarios": 187,
+  "n_buses_scored": 117,
+  "excluded_slack_buses": [
+    68
+  ],
+  "weights_used": {
+    "congestion": 0.35,
+    "voltage": 0.25,
+    "cascade": 0.25,
+    "severity": 0.15
+  },
+  "opf_available": true,
+  "dispatch_model": "fixed_full_discharge_heuristic"
+}

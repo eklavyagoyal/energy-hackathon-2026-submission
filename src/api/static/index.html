@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Warden / Grid Operations</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23221B12'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' font-weight='600' text-anchor='middle' fill='%230E7F66'%3EW%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#F1E7D2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,400;9..144,1,500;9..144,1,600&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================================
+   WARDEN  --  home page.
+   First paint: warm paper, text rises. Canvas lattice breathes underneath.
+   Enter: grid energizes to pine, cream wipes the screen, console loads.
+   ========================================================================== */
+:root {
+  --paper: #F1E7D2;
+  --paper-2: #F7EFDE;
+  --paper-3: #E8DBC0;
+  --ink: #221B12;
+  --ink-2: #6A5C46;
+  --ink-3: #7C6E54;
+  --ink-4: #BCAC8E;
+  --accent: #0E7F66;
+  --accent-deep: #0A5E4B;
+  --accent-soft: rgba(14,127,102,.10);
+  --accent-ink: #FBF6EA;
+  --line: rgba(60,44,22,.16);
+  --line-2: rgba(60,44,22,.28);
+  --r: 14px;
+  --dur: .42s;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(14,127,102,.22); color: var(--ink); }
+html { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+body::-webkit-scrollbar { width: 8px; }
+body::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 8px; }
+html, body { height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- canvas layer (z:0) ---- */
+#lattice {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+/* ---- atmospheric overlays ---- */
+.bg-warm {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 50% -12%, rgba(255,248,230,.32), transparent 62%),
+    radial-gradient(95% 75% at 90% 2%, rgba(214,158,92,.11), transparent 56%),
+    radial-gradient(80% 80% at 0% 100%, rgba(110,140,110,.07), transparent 55%);
+}
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .46;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+}
+/* soft radial vignette keeps the canvas from competing with text */
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(60% 74% at 28% 52%, var(--paper) 18%, rgba(241,231,210,.56) 48%, transparent 80%);
+}
+
+/* ---- wipe overlay: cream floods on Enter, then nav ---- */
+.wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--paper);
+  /* start invisible, clipped to bottom (transform-origin bottom center)  */
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  pointer-events: none;
+  /* cubic in-out for the wipe feel */
+  transition: transform .62s cubic-bezier(.76,0,.24,1);
+  will-change: transform;
+}
+.wipe.running { transform: scaleY(1); }
+
+/* ---- top header ---- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 24px clamp(20px,3.2vw,54px);
+}
+.logo {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(20px, 1rem + .6vw, 25px);
+  color: var(--ink);
+  letter-spacing: .15px;
+  font-variation-settings: 'opsz' 32, 'wght' 600;
+}
+.logo b { color: var(--accent); font-style: normal; }
+.spacer { flex: 1 1 auto; }
+.rail-tag {
+  font-family: var(--mono);
+  font-size: clamp(10px, .6rem + .1vw, 11.5px);
+  color: var(--ink-3);
+  letter-spacing: .5px;
+  font-variant-numeric: tabular-nums;
+}
+.rail-tag .freq { color: var(--ink-2); }
+
+/* ---- hero ---- */
+main {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 clamp(20px,3.2vw,54px);
+  max-width: 980px;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: clamp(10px, .6rem + .15vw, 12px);
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: clamp(14px, 1.8vh, 24px);
+}
+h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(40px, 2.3rem + 4.6vw, 88px);
+  line-height: .98;
+  letter-spacing: -.018em;
+  color: var(--ink);
+  max-width: 22ch;
+  font-optical-sizing: none;
+  font-variation-settings: 'opsz' 96, 'wght' 600;
+}
+h1 em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+  font-variation-settings: 'opsz' 144, 'wght' 600;
+  letter-spacing: -.01em;
+}
+.sub {
+  margin-top: clamp(18px, 2.4vh, 30px);
+  max-width: 52ch;
+  color: var(--ink-2);
+  font-size: clamp(14px, .86rem + .28vw, 18px);
+  line-height: 1.62;
+}
+.sub b { color: var(--ink); font-weight: 600; }
+
+/* ---- anchor line: the truth statement ---- */
+.truth {
+  margin-top: clamp(14px, 1.6vh, 20px);
+  max-width: 52ch;
+  font-family: var(--mono);
+  font-size: clamp(10.5px, .62rem + .2vw, 12.5px);
+  color: var(--ink-3);
+  letter-spacing: .25px;
+  line-height: 1.5;
+  border-left: 2px solid var(--accent-soft);
+  padding-left: 12px;
+}
+.truth b { color: var(--ink-2); font-weight: 500; }
+
+.actions {
+  margin-top: clamp(26px, 3.4vh, 48px);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap;
+}
+
+/* ---- enter button ---- */
+.enter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-family: var(--sans);
+  font-size: clamp(14px, .86rem + .18vw, 17px);
+  font-weight: 600;
+  color: var(--accent-ink);
+  background: var(--ink);
+  padding: 16px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow:
+    0 8px 28px -12px rgba(34,27,18,.68),
+    inset 0 1px 0 rgba(255,255,255,.07);
+  transition:
+    transform .28s var(--ease),
+    box-shadow .28s var(--ease),
+    background .22s;
+  isolation: isolate;
+  overflow: hidden;
+}
+/* energize shimmer - pine fills from left on hover */
+.enter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, var(--accent-deep), var(--accent));
+  transform: translateX(-110%);
+  transition: transform .44s var(--ease);
+  z-index: -1;
+  border-radius: inherit;
+}
+.enter:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -12px rgba(34,27,18,.66); }
+.enter:hover::before { transform: translateX(0); }
+.enter:focus-visible { outline: 2.5px solid var(--accent); outline-offset: 3px; }
+.enter .arrow {
+  display: inline-block;
+  transition: transform .32s var(--ease);
+  font-style: normal;
+}
+.enter:hover .arrow { transform: translateX(6px); }
+
+.honest {
+  font-family: var(--mono);
+  font-size: clamp(10px, .6rem + .08vw, 11.5px);
+  color: var(--ink-4);
+  letter-spacing: .3px;
+  line-height: 1.5;
+  max-width: 16ch;
+}
+
+/* ---- footer ---- */
+.foot {
+  position: fixed;
+  left: clamp(20px,3.2vw,54px);
+  bottom: 22px;
+  z-index: 4;
+  font-family: var(--mono);
+  font-size: clamp(9.5px, .55rem + .08vw, 10.5px);
+  color: var(--ink-4);
+  letter-spacing: .5px;
+}
+
+/* ---- reveal choreography ---- */
+/*
+  Each .reveal element starts invisible + shifted down 20px.
+  We use a single CSS animation driven by --d (delay) custom property.
+  The animation is short (0.72s) with the spring ease so it feels snappy.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: surfaceUp .72s var(--ease) forwards;
+  animation-delay: var(--d, 0s);
+}
+@keyframes surfaceUp {
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 640px) {
+  .scrim { background: radial-gradient(120% 62% at 50% 44%, var(--paper) 28%, rgba(241,231,210,.5) 62%, transparent 88%); }
+  main { max-width: 100%; }
+  .rail-tag { display: none; }
+  h1 { letter-spacing: -.018em; }
+}
+
+/* ---- reduced motion: skip all animations, keep static composition ---- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+  .wipe { transition: none; }
+  .enter::before { transition: none; }
+  .enter { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!--
+  Layer stack (back to front):
+  0  #lattice canvas  - breathing / energizing lattice from topology
+  1  .bg-warm         - atmospheric color warmth
+  1  .bg-grain        - paper noise
+  2  .scrim           - radial cream mask so text is always legible
+  3  main content     - hero text
+  4  .foot            - copyright line
+  5  header           - logo + frequency
+  60 .wipe            - cream curtain that rises on Enter
+-->
+
+<canvas id="lattice" aria-hidden="true"></canvas>
+<div class="bg-warm" aria-hidden="true"></div>
+<div class="bg-grain" aria-hidden="true"></div>
+<div class="scrim" aria-hidden="true"></div>
+<div class="wipe" id="wipe" aria-hidden="true"></div>
+
+<header>
+  <span class="logo">Warde<b>n</b></span>
+  <div class="spacer"></div>
+  <span class="rail-tag"><span id="homeDataset">Loading grid</span> &middot; E.ON / Energy Hack Munich &middot; <span class="freq" id="freq">50.00</span> Hz</span>
+</header>
+
+<main>
+  <div class="eyebrow reveal" style="--d: 0s">N-1 SECURITY &middot; <span id="homeDatasetKicker">SOLVER GRID</span></div>
+
+  <h1 class="reveal" style="--d: .07s">Every action,<br>verified by <em>physics</em>.</h1>
+
+  <p class="sub reveal" style="--d: .16s">
+    A stressed transmission grid, held N-1 secure by <b>pandapower</b>, a real AC power-flow solver.
+    The agent picks which tool to run; the solver decides what is feasible.
+  </p>
+
+  <p class="truth reveal" style="--d: .24s">
+    Proof stack: AC power flow, N-1 contingency sweep, and deterministic replay fixtures.<br>
+    <b>The LLM narrates. Pandapower decides feasibility.</b>
+  </p>
+
+  <div class="actions reveal" style="--d: .34s">
+    <a class="enter" id="enter" href="/console">
+      Enter the console <span class="arrow" aria-hidden="true">&#8594;</span>
+    </a>
+    <span class="honest"><span id="homeTopology">grid topology</span> &middot; full AC power flow</span>
+  </div>
+</main>
+
+<div class="foot">pandapower &middot; <span id="homeFootDataset">solver grid</span> &middot; Energy Hack Munich 2026</div>
+
+<script>
+"use strict";
+
+// ============================================================================
+// CONSTANTS
+// ============================================================================
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Color palette used by the lattice
+const INK = 'rgba(34,27,18,';          // espresso base
+const PINE = 'rgba(14,127,102,';       // accent green
+const PINE_BRIGHT = 'rgba(47,227,173,'; // bright screen green (used during energize)
+
+function datasetLabel(raw) {
+  const v = String(raw || '').trim();
+  if (v === 'case118') return 'case118 sandbox';
+  if (v === 'pypsa_eur') return 'PyPSA-Eur';
+  if (v === 'tso_real') return 'TSO dataset';
+  return v ? v.replace(/_/g, ' ') : 'solver grid';
+}
+
+function setText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+
+(async function hydrateDatasetLabels() {
+  try {
+    const [health, topo] = await Promise.all([
+      fetch('/api/health').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/topology').then(r => r.ok ? r.json() : null).catch(() => null),
+    ]);
+    const label = datasetLabel(health && health.dataset);
+    const busCount = topo && Array.isArray(topo.buses) ? topo.buses.length : null;
+    const topology = busCount ? `${busCount} buses` : 'grid topology';
+    setText('homeDataset', label);
+    setText('homeDatasetKicker', label.toUpperCase());
+    setText('homeTopology', topology);
+    setText('homeFootDataset', `${label} · ${topology}`);
+  } catch (_) {
+    setText('homeDataset', 'solver grid');
+  }
+})();
+
+// ============================================================================
+// FREQUENCY HEARTBEAT
+// Simple random-walk around 50 Hz, refreshed every second.
+// ============================================================================
+(function startFreqTicker() {
+  const el = document.getElementById('freq');
+  if (!el || REDUCED) return;
+  let f = 50.0;
+  setInterval(() => {
+    if (document.hidden) return;
+    f += (50 - f) * 0.12 + (Math.random() - 0.5) * 0.022;
+    el.textContent = f.toFixed(2);
+  }, 1000);
+})();
+
+// ============================================================================
+// CANVAS LATTICE
+//
+// Strategy
+// ---------
+// We fetch /api/topology once. If it succeeds we draw the same topology
+// geometry the console renders. If it fails we synthesise a
+// lightweight procedural lattice so the page is never blank.
+//
+// Drawing modes (layered, drawn in order):
+//   1. Base edges - very faint espresso lines, constant alpha ~0.07
+//   2. Sweep highlight - a narrow vertical band scrolls left-to-right,
+//      adding a pine glow to edges it crosses. Gives the "pulse" feel
+//      without any DOM changes.
+//   3. Energize flood - on Enter click, `energize` goes 0 -> 1 over ~600ms.
+//      All edges flood to bright pine; nodes bloom. The canvas brightens as
+//      the wipe overlay rises behind it.
+//   4. Bus nodes - tiny markers, role-differentiated (slack diamond glows).
+//
+// Performance
+// -----------
+//   - One rAF loop while `need()` is true.
+//   - Stops the loop when page is reduced-motion AND not energizing.
+//   - DPR clamped at 2.
+//   - Clears and redraws each frame (no offscreen caching needed at this scale).
+//   - ResizeObserver resizes the canvas buffer without triggering layout.
+// ============================================================================
+(function initLattice() {
+  const cv  = document.getElementById('lattice');
+  const ctx = cv.getContext('2d');
+
+  let topology = null;   // { buses: [...], edges: [...], view: number }
+  let busById  = new Map();
+
+  // canvas sizing state
+  let DPR = 1, cw = 0, ch = 0;
+  let VIEW = 1000;       // coordinate space of the topology layout
+  let sc = 1, ox = 0, oy = 0; // scale and offset for world->screen
+
+  // animation state
+  let energize  = 0;    // 0..1 - how "lit up" the grid is
+  let loopActive = false;
+  let energizingStartMs = 0;
+  const ENERGIZE_DURATION = 600; // ms
+
+  // ---- synthetic fallback topology (procedural lattice) ----
+  // Used when /api/topology is unreachable. 64 nodes in a roughly grid-ish
+  // layout with random short-range connections.
+  function makeSyntheticTopo() {
+    const buses = [];
+    const edges = [];
+    const COLS = 8, ROWS = 8;
+    const margin = 80;
+    const stepX = (VIEW - margin * 2) / (COLS - 1);
+    const stepY = (VIEW - margin * 2) / (ROWS - 1);
+    let id = 0;
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        buses.push({
+          id,
+          x: margin + c * stepX + (Math.random() - .5) * stepX * .28,
+          y: margin + r * stepY + (Math.random() - .5) * stepY * .28,
+          role: id === 0 ? 'slack' : (id % 9 === 0 ? 'gen' : id % 5 === 0 ? 'load' : 'bus'),
+        });
+        // horizontal edge
+        if (c < COLS - 1) edges.push({ id: `h${id}`, from: id, to: id + 1, kind: 'line' });
+        // vertical edge
+        if (r < ROWS - 1) edges.push({ id: `v${id}`, from: id, to: id + COLS, kind: 'line' });
+        // sparse diagonal
+        if (c < COLS - 1 && r < ROWS - 1 && Math.random() < .22)
+          edges.push({ id: `d${id}`, from: id, to: id + COLS + 1, kind: 'line' });
+        id++;
+      }
+    }
+    return { buses, edges, view: VIEW };
+  }
+
+  // ---- resize handling ----
+  function resize() {
+    DPR = Math.min(devicePixelRatio || 1, 2);
+    cw = innerWidth;
+    ch = innerHeight;
+    cv.width  = Math.round(cw * DPR);
+    cv.height = Math.round(ch * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    // fit the grid into the canvas, offset slightly right/down to leave
+    // breathing room for the left-aligned text column
+    sc = Math.max(cw / VIEW, ch / VIEW) * 1.04;
+    ox = (cw - VIEW * sc) / 2 + cw * 0.16;
+    oy = (ch - VIEW * sc) / 2 + ch * 0.03;
+    if (topology) drawFrame(performance.now());
+  }
+
+  // world-to-screen projection
+  const proj = (x, y) => [ox + x * sc, oy + y * sc];
+
+  // ---- draw one frame ----
+  function drawFrame(now) {
+    if (!topology || !cw) return;
+
+    const t = now / 1000;
+    const e = energize; // local snapshot
+
+    // breathing amplitude: gentle sinusoid 0.82..1.0
+    const breathe = 0.82 + 0.18 * (0.5 + 0.5 * Math.sin(t * 0.58));
+
+    // sweep: a normalised 0..1 x-position that scrolls left to right,
+    // looping every ~17.8 s. REDUCED mode: freeze sweep at -2 (off screen).
+    const sweep = REDUCED ? -2 : ((t * 0.056) % 1);
+
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.lineCap = 'round';
+
+    // ---- edges ----
+    for (const ed of topology.edges) {
+      const a = busById.get(ed.from);
+      const b = busById.get(ed.to);
+      if (!a || !b) continue;
+
+      const [x1, y1] = proj(a.x, a.y);
+      const [x2, y2] = proj(b.x, b.y);
+
+      // midpoint's normalised x position
+      const mx = ((x1 + x2) / 2) / cw;
+      // how close is this edge to the sweep band? (gaussian-like falloff)
+      const nearSweep = Math.max(0, 1 - Math.abs(mx - sweep) * 7.5);
+
+      const isTrafo = ed.kind === 'trafo';
+
+      // --- base layer ---
+      const baseAlpha = (0.055 + 0.038 * breathe) * (isTrafo ? 1.4 : 1);
+      ctx.strokeStyle = INK + baseAlpha + ')';
+      ctx.lineWidth   = isTrafo ? 1.0 : 0.7;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+
+      // --- sweep pine highlight ---
+      // The sweep band adds a gentle pine glow that passes through the lattice.
+      const sweepAlpha = nearSweep * 0.18 * breathe;
+      // --- energize flood ---
+      // As e -> 1, the entire lattice floods to bright pine.
+      const energizeAlpha = e * e * 0.82; // ease in (quadratic)
+
+      const pineAlpha = Math.max(sweepAlpha, energizeAlpha);
+      if (pineAlpha > 0.008) {
+        const col = e > 0.5 ? PINE_BRIGHT : PINE;
+        ctx.strokeStyle = col + pineAlpha + ')';
+        ctx.lineWidth   = (isTrafo ? 1.3 : 0.9) + e * 1.8;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
+    }
+
+    // ---- nodes ----
+    for (const n of topology.buses) {
+      const [x, y] = proj(n.x, n.y);
+
+      if (n.role === 'slack') {
+        // pulsing diamond with glow
+        const pr = 3.2 + 1.1 * Math.sin(t * 1.35);
+        const glowR = pr + 1.5 + e * 3;
+        if (e > 0.05) {
+          ctx.save();
+          ctx.shadowColor = e > 0.5 ? 'rgba(47,227,173,.7)' : 'rgba(14,127,102,.55)';
+          ctx.shadowBlur  = 12 + 14 * e;
+          const gc = e > 0.5 ? PINE_BRIGHT : PINE;
+          ctx.fillStyle = gc + (0.65 + 0.35 * e) + ')';
+          ctx.beginPath();
+          ctx.arc(x, y, glowR, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        } else {
+          ctx.fillStyle = PINE + (0.52 + 0.3 * breathe) + ')';
+          ctx.beginPath();
+          ctx.arc(x, y, pr, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else {
+        const baseR = n.role === 'gen' ? 1.7 : n.role === 'load' ? 1.35 : 1.05;
+        const r = baseR + e * 0.8;
+        if (e > 0.04) {
+          const gc = e > 0.5 ? PINE_BRIGHT : PINE;
+          ctx.fillStyle = gc + (0.15 + 0.55 * e) + ')';
+        } else {
+          ctx.fillStyle = INK + (0.14 + 0.10 * breathe) + ')';
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    if (needsLoop()) requestAnimationFrame(drawFrame);
+    else loopActive = false;
+  }
+
+  function needsLoop() {
+    if (!topology) return false;
+    if (REDUCED && energize === 0) return false; // static frame sufficient
+    return true;
+  }
+
+  function kickLoop() {
+    if (!topology) return;
+    if (REDUCED && energize === 0) {
+      // Draw one static frame and stop.
+      drawFrame(performance.now());
+      return;
+    }
+    if (!loopActive) {
+      loopActive = true;
+      requestAnimationFrame(drawFrame);
+    }
+  }
+
+  // ---- load topology ----
+  fetch('/api/topology')
+    .then(r => r.json())
+    .then(d => {
+      if (!d || d.error || !d.buses) throw new Error('bad topology');
+      topology = d;
+      d.buses.forEach(b => busById.set(b.id, b));
+      VIEW = (typeof d.view === 'number') ? d.view
+           : (d.view && d.view.w) || 1000;
+    })
+    .catch(() => {
+      // synthetic fallback: always show something
+      topology = makeSyntheticTopo();
+      topology.buses.forEach(b => busById.set(b.id, b));
+    })
+    .finally(() => {
+      resize();
+      kickLoop();
+    });
+
+  // ---- resize observer ----
+  const ro = new ResizeObserver(resize);
+  ro.observe(document.body);
+
+  // ---- Enter click: energize then wipe ----
+  const enterBtn = document.getElementById('enter');
+  const wipeEl   = document.getElementById('wipe');
+
+  enterBtn.addEventListener('click', ev => {
+    ev.preventDefault();
+    const href = enterBtn.getAttribute('href');
+
+    if (REDUCED || !topology) {
+      // Immediately navigate; no animation.
+      location.href = href;
+      return;
+    }
+
+    //
+    // Energize phase (0 - ENERGIZE_DURATION ms):
+    //   - rAF loop drives `energize` 0 -> 1, flooding lattice to pine.
+    //   - Canvas brightens with the pine flood.
+    //
+    // Wipe phase (starts ~200ms in, completes ~620ms):
+    //   - A cream panel scaleY(0 -> 1) rises from bottom, covering canvas.
+    //   - After transition ends, navigate.
+    //
+    energizingStartMs = performance.now();
+    loopActive = true;
+
+    function energizeLoop(now) {
+      energize = Math.min(1, (now - energizingStartMs) / ENERGIZE_DURATION);
+      drawFrame(now);
+      if (energize < 1) {
+        requestAnimationFrame(energizeLoop);
+      } else {
+        loopActive = false;
+      }
+    }
+    requestAnimationFrame(energizeLoop);
+
+    // Start the cream wipe slightly after energize starts (staggered for drama)
+    setTimeout(() => {
+      wipeEl.classList.add('running');
+    }, 160);
+
+    // Navigate after wipe completes (transition is .62s + 160ms offset + small buffer)
+    setTimeout(() => {
+      location.href = href;
+    }, 860);
+  });
+})();
+</script>
+</body>
+</html>

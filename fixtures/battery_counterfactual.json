@@ -1,0 +1,80 @@
+{
+  "recommended_bus": 14,
+  "battery_mw": 50.0,
+  "battery_mwh": 200.0,
+  "contingency": {
+    "id": "line_89",
+    "name": "line 89 (bus 37 to bus 64)"
+  },
+  "without_battery": {
+    "contingency_id": "line_89",
+    "status": "CASCADE",
+    "cascade_depth": 3,
+    "load_shed_mw": 1257.0,
+    "lines_tripped": [
+      28,
+      54,
+      51,
+      52,
+      53
+    ],
+    "n_elements_tripped": 5,
+    "max_loading_pct": 46.7,
+    "cascade_trace": [
+      {
+        "iter": 1,
+        "tripped": [
+          {
+            "etype": "line",
+            "index": 28,
+            "loading_pct": 124.4704210239645
+          }
+        ],
+        "load_shed_mw": 0.0
+      },
+      {
+        "iter": 2,
+        "tripped": [
+          {
+            "etype": "line",
+            "index": 54,
+            "loading_pct": 132.50818460841458
+          }
+        ],
+        "load_shed_mw": 0.0
+      },
+      {
+        "iter": 3,
+        "tripped": [
+          {
+            "etype": "line",
+            "index": 51,
+            "loading_pct": 142.44702419384075
+          },
+          {
+            "etype": "line",
+            "index": 52,
+            "loading_pct": 177.72859640272566
+          },
+          {
+            "etype": "line",
+            "index": 53,
+            "loading_pct": 155.77209814781153
+          }
+        ],
+        "load_shed_mw": 1257.0
+      }
+    ]
+  },
+  "with_battery": {
+    "contingency_id": "line_89",
+    "status": "SECURE",
+    "cascade_depth": 0,
+    "load_shed_mw": 0.0,
+    "lines_tripped": [],
+    "n_elements_tripped": 0,
+    "max_loading_pct": 87.7,
+    "cascade_trace": []
+  },
+  "load_shed_avoided_mw": 1257.0
+}

@@ -1,0 +1,6 @@
+name,bus,control,p_set,p_nom,carrier,type
+slack_DE_N,DE_N_380,Slack,800,4000,gas,CCGT
+ccgt_DE_S,DE_S_380,PV,600,1500,gas,CCGT
+nuclear_FR,FR_380,PV,900,1600,nuclear,nuclear
+wind_DE_N220,DE_N_220,PV,200,600,onwind,onshore wind
+solar_DE_S220,DE_S_220,PV,150,700,solar,solar PV

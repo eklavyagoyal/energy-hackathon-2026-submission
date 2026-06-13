@@ -1,0 +1,1949 @@
+{
+  "view": 1000.0,
+  "buses": [
+    {
+      "id": 0,
+      "x": 693.1,
+      "y": 960.0,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 1,
+      "x": 612.7,
+      "y": 945.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 2,
+      "x": 682.5,
+      "y": 887.8,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 3,
+      "x": 745.4,
+      "y": 856.7,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 4,
+      "x": 708.0,
+      "y": 813.7,
+      "vn_kv": 138.0,
+      "role": "bus"
+    },
+    {
+      "id": 5,
+      "x": 792.7,
+      "y": 859.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 6,
+      "x": 725.0,
+      "y": 912.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 7,
+      "x": 678.8,
+      "y": 738.8,
+      "vn_kv": 345.0,
+      "role": "gen"
+    },
+    {
+      "id": 8,
+      "x": 796.6,
+      "y": 747.4,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 9,
+      "x": 906.6,
+      "y": 766.5,
+      "vn_kv": 345.0,
+      "role": "gen"
+    },
+    {
+      "id": 10,
+      "x": 651.0,
+      "y": 855.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 11,
+      "x": 610.0,
+      "y": 879.6,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 12,
+      "x": 558.4,
+      "y": 836.8,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 13,
+      "x": 521.5,
+      "y": 853.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 14,
+      "x": 539.5,
+      "y": 779.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 15,
+      "x": 644.5,
+      "y": 798.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 16,
+      "x": 630.1,
+      "y": 724.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 17,
+      "x": 570.6,
+      "y": 760.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 18,
+      "x": 470.4,
+      "y": 772.7,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 19,
+      "x": 553.5,
+      "y": 726.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 20,
+      "x": 647.6,
+      "y": 668.6,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 21,
+      "x": 685.6,
+      "y": 594.8,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 22,
+      "x": 703.1,
+      "y": 553.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 23,
+      "x": 625.6,
+      "y": 505.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 24,
+      "x": 762.2,
+      "y": 585.6,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 25,
+      "x": 670.9,
+      "y": 637.6,
+      "vn_kv": 345.0,
+      "role": "gen"
+    },
+    {
+      "id": 26,
+      "x": 859.9,
+      "y": 614.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 27,
+      "x": 928.8,
+      "y": 662.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 28,
+      "x": 856.8,
+      "y": 703.4,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 29,
+      "x": 586.2,
+      "y": 674.8,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 30,
+      "x": 748.8,
+      "y": 691.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 31,
+      "x": 773.5,
+      "y": 618.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 32,
+      "x": 459.3,
+      "y": 737.8,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 33,
+      "x": 375.4,
+      "y": 746.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 34,
+      "x": 318.9,
+      "y": 752.3,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 35,
+      "x": 302.4,
+      "y": 804.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 36,
+      "x": 410.6,
+      "y": 689.1,
+      "vn_kv": 138.0,
+      "role": "bus"
+    },
+    {
+      "id": 37,
+      "x": 482.6,
+      "y": 633.9,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 38,
+      "x": 334.3,
+      "y": 695.3,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 39,
+      "x": 368.3,
+      "y": 638.5,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 40,
+      "x": 298.3,
+      "y": 626.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 41,
+      "x": 342.7,
+      "y": 566.0,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 42,
+      "x": 270.5,
+      "y": 714.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 43,
+      "x": 238.8,
+      "y": 640.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 44,
+      "x": 259.2,
+      "y": 547.6,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 45,
+      "x": 257.5,
+      "y": 489.3,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 46,
+      "x": 334.6,
+      "y": 465.0,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 47,
+      "x": 263.8,
+      "y": 454.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 48,
+      "x": 296.9,
+      "y": 502.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 49,
+      "x": 219.4,
+      "y": 478.0,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 50,
+      "x": 190.5,
+      "y": 466.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 51,
+      "x": 95.6,
+      "y": 435.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 52,
+      "x": 62.1,
+      "y": 490.3,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 53,
+      "x": 172.4,
+      "y": 519.0,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 54,
+      "x": 59.2,
+      "y": 547.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 55,
+      "x": 84.5,
+      "y": 521.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 56,
+      "x": 107.1,
+      "y": 467.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 57,
+      "x": 67.2,
+      "y": 472.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 58,
+      "x": 111.6,
+      "y": 572.3,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 59,
+      "x": 77.4,
+      "y": 620.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 60,
+      "x": 154.8,
+      "y": 620.3,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 61,
+      "x": 190.8,
+      "y": 586.6,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 62,
+      "x": 174.4,
+      "y": 633.3,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 63,
+      "x": 294.7,
+      "y": 603.8,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 64,
+      "x": 414.2,
+      "y": 568.0,
+      "vn_kv": 345.0,
+      "role": "gen"
+    },
+    {
+      "id": 65,
+      "x": 314.6,
+      "y": 553.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 66,
+      "x": 243.1,
+      "y": 599.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 67,
+      "x": 437.4,
+      "y": 490.2,
+      "vn_kv": 161.0,
+      "role": "bus"
+    },
+    {
+      "id": 68,
+      "x": 397.2,
+      "y": 456.2,
+      "vn_kv": 138.0,
+      "role": "slack"
+    },
+    {
+      "id": 69,
+      "x": 523.8,
+      "y": 468.7,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 70,
+      "x": 631.1,
+      "y": 436.9,
+      "vn_kv": 138.0,
+      "role": "bus"
+    },
+    {
+      "id": 71,
+      "x": 716.5,
+      "y": 466.0,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 72,
+      "x": 727.2,
+      "y": 397.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 73,
+      "x": 559.3,
+      "y": 423.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 74,
+      "x": 460.6,
+      "y": 426.4,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 75,
+      "x": 449.5,
+      "y": 364.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 76,
+      "x": 387.9,
+      "y": 381.8,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 77,
+      "x": 313.4,
+      "y": 360.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 78,
+      "x": 373.8,
+      "y": 316.2,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 79,
+      "x": 456.9,
+      "y": 332.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 80,
+      "x": 471.1,
+      "y": 404.5,
+      "vn_kv": 345.0,
+      "role": "bus"
+    },
+    {
+      "id": 81,
+      "x": 326.6,
+      "y": 315.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 82,
+      "x": 239.8,
+      "y": 268.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 83,
+      "x": 166.4,
+      "y": 236.8,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 84,
+      "x": 222.8,
+      "y": 197.1,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 85,
+      "x": 120.9,
+      "y": 168.6,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 86,
+      "x": 40.0,
+      "y": 132.2,
+      "vn_kv": 161.0,
+      "role": "gen"
+    },
+    {
+      "id": 87,
+      "x": 215.9,
+      "y": 140.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 88,
+      "x": 294.9,
+      "y": 139.4,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 89,
+      "x": 271.1,
+      "y": 70.7,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 90,
+      "x": 362.9,
+      "y": 83.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 91,
+      "x": 410.9,
+      "y": 148.4,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 92,
+      "x": 362.0,
+      "y": 164.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 93,
+      "x": 433.7,
+      "y": 206.6,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 94,
+      "x": 373.3,
+      "y": 229.6,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 95,
+      "x": 409.2,
+      "y": 274.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 96,
+      "x": 486.7,
+      "y": 302.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 97,
+      "x": 506.0,
+      "y": 265.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 98,
+      "x": 535.3,
+      "y": 271.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 99,
+      "x": 512.9,
+      "y": 197.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 100,
+      "x": 488.7,
+      "y": 140.9,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 101,
+      "x": 431.3,
+      "y": 87.1,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 102,
+      "x": 628.9,
+      "y": 170.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 103,
+      "x": 584.2,
+      "y": 167.6,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 104,
+      "x": 625.1,
+      "y": 105.5,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 105,
+      "x": 551.6,
+      "y": 140.4,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 106,
+      "x": 561.9,
+      "y": 74.9,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 107,
+      "x": 661.3,
+      "y": 40.0,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 108,
+      "x": 732.8,
+      "y": 61.0,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 109,
+      "x": 718.4,
+      "y": 133.3,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 110,
+      "x": 818.3,
+      "y": 134.2,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 111,
+      "x": 794.6,
+      "y": 93.0,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 112,
+      "x": 714.4,
+      "y": 682.5,
+      "vn_kv": 138.0,
+      "role": "gen"
+    },
+    {
+      "id": 113,
+      "x": 877.0,
+      "y": 581.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 114,
+      "x": 960.0,
+      "y": 591.5,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 115,
+      "x": 510.3,
+      "y": 497.2,
+      "vn_kv": 345.0,
+      "role": "gen"
+    },
+    {
+      "id": 116,
+      "x": 547.9,
+      "y": 937.3,
+      "vn_kv": 138.0,
+      "role": "load"
+    },
+    {
+      "id": 117,
+      "x": 534.1,
+      "y": 386.7,
+      "vn_kv": 138.0,
+      "role": "load"
+    }
+  ],
+  "edges": [
+    {
+      "id": "line_0",
+      "kind": "line",
+      "from": 0,
+      "to": 1
+    },
+    {
+      "id": "line_1",
+      "kind": "line",
+      "from": 0,
+      "to": 2
+    },
+    {
+      "id": "line_2",
+      "kind": "line",
+      "from": 3,
+      "to": 4
+    },
+    {
+      "id": "line_3",
+      "kind": "line",
+      "from": 2,
+      "to": 4
+    },
+    {
+      "id": "line_4",
+      "kind": "line",
+      "from": 4,
+      "to": 5
+    },
+    {
+      "id": "line_5",
+      "kind": "line",
+      "from": 5,
+      "to": 6
+    },
+    {
+      "id": "line_6",
+      "kind": "line",
+      "from": 7,
+      "to": 8
+    },
+    {
+      "id": "line_7",
+      "kind": "line",
+      "from": 8,
+      "to": 9
+    },
+    {
+      "id": "line_8",
+      "kind": "line",
+      "from": 3,
+      "to": 10
+    },
+    {
+      "id": "line_9",
+      "kind": "line",
+      "from": 4,
+      "to": 10
+    },
+    {
+      "id": "line_10",
+      "kind": "line",
+      "from": 10,
+      "to": 11
+    },
+    {
+      "id": "line_11",
+      "kind": "line",
+      "from": 1,
+      "to": 11
+    },
+    {
+      "id": "line_12",
+      "kind": "line",
+      "from": 2,
+      "to": 11
+    },
+    {
+      "id": "line_13",
+      "kind": "line",
+      "from": 6,
+      "to": 11
+    },
+    {
+      "id": "line_14",
+      "kind": "line",
+      "from": 10,
+      "to": 12
+    },
+    {
+      "id": "line_15",
+      "kind": "line",
+      "from": 11,
+      "to": 13
+    },
+    {
+      "id": "line_16",
+      "kind": "line",
+      "from": 12,
+      "to": 14
+    },
+    {
+      "id": "line_17",
+      "kind": "line",
+      "from": 13,
+      "to": 14
+    },
+    {
+      "id": "line_18",
+      "kind": "line",
+      "from": 11,
+      "to": 15
+    },
+    {
+      "id": "line_19",
+      "kind": "line",
+      "from": 14,
+      "to": 16
+    },
+    {
+      "id": "line_20",
+      "kind": "line",
+      "from": 15,
+      "to": 16
+    },
+    {
+      "id": "line_21",
+      "kind": "line",
+      "from": 16,
+      "to": 17
+    },
+    {
+      "id": "line_22",
+      "kind": "line",
+      "from": 17,
+      "to": 18
+    },
+    {
+      "id": "line_23",
+      "kind": "line",
+      "from": 18,
+      "to": 19
+    },
+    {
+      "id": "line_24",
+      "kind": "line",
+      "from": 14,
+      "to": 18
+    },
+    {
+      "id": "line_25",
+      "kind": "line",
+      "from": 19,
+      "to": 20
+    },
+    {
+      "id": "line_26",
+      "kind": "line",
+      "from": 20,
+      "to": 21
+    },
+    {
+      "id": "line_27",
+      "kind": "line",
+      "from": 21,
+      "to": 22
+    },
+    {
+      "id": "line_28",
+      "kind": "line",
+      "from": 22,
+      "to": 23
+    },
+    {
+      "id": "line_29",
+      "kind": "line",
+      "from": 22,
+      "to": 24
+    },
+    {
+      "id": "line_30",
+      "kind": "line",
+      "from": 24,
+      "to": 26
+    },
+    {
+      "id": "line_31",
+      "kind": "line",
+      "from": 26,
+      "to": 27
+    },
+    {
+      "id": "line_32",
+      "kind": "line",
+      "from": 27,
+      "to": 28
+    },
+    {
+      "id": "line_33",
+      "kind": "line",
+      "from": 7,
+      "to": 29
+    },
+    {
+      "id": "line_34",
+      "kind": "line",
+      "from": 25,
+      "to": 29
+    },
+    {
+      "id": "line_35",
+      "kind": "line",
+      "from": 16,
+      "to": 30
+    },
+    {
+      "id": "line_36",
+      "kind": "line",
+      "from": 28,
+      "to": 30
+    },
+    {
+      "id": "line_37",
+      "kind": "line",
+      "from": 22,
+      "to": 31
+    },
+    {
+      "id": "line_38",
+      "kind": "line",
+      "from": 30,
+      "to": 31
+    },
+    {
+      "id": "line_39",
+      "kind": "line",
+      "from": 26,
+      "to": 31
+    },
+    {
+      "id": "line_40",
+      "kind": "line",
+      "from": 14,
+      "to": 32
+    },
+    {
+      "id": "line_41",
+      "kind": "line",
+      "from": 18,
+      "to": 33
+    },
+    {
+      "id": "line_42",
+      "kind": "line",
+      "from": 34,
+      "to": 35
+    },
+    {
+      "id": "line_43",
+      "kind": "line",
+      "from": 34,
+      "to": 36
+    },
+    {
+      "id": "line_44",
+      "kind": "line",
+      "from": 32,
+      "to": 36
+    },
+    {
+      "id": "line_45",
+      "kind": "line",
+      "from": 33,
+      "to": 35
+    },
+    {
+      "id": "line_46",
+      "kind": "line",
+      "from": 33,
+      "to": 36
+    },
+    {
+      "id": "line_47",
+      "kind": "line",
+      "from": 36,
+      "to": 38
+    },
+    {
+      "id": "line_48",
+      "kind": "line",
+      "from": 36,
+      "to": 39
+    },
+    {
+      "id": "line_49",
+      "kind": "line",
+      "from": 29,
+      "to": 37
+    },
+    {
+      "id": "line_50",
+      "kind": "line",
+      "from": 38,
+      "to": 39
+    },
+    {
+      "id": "line_51",
+      "kind": "line",
+      "from": 39,
+      "to": 40
+    },
+    {
+      "id": "line_52",
+      "kind": "line",
+      "from": 39,
+      "to": 41
+    },
+    {
+      "id": "line_53",
+      "kind": "line",
+      "from": 40,
+      "to": 41
+    },
+    {
+      "id": "line_54",
+      "kind": "line",
+      "from": 42,
+      "to": 43
+    },
+    {
+      "id": "line_55",
+      "kind": "line",
+      "from": 33,
+      "to": 42
+    },
+    {
+      "id": "line_56",
+      "kind": "line",
+      "from": 43,
+      "to": 44
+    },
+    {
+      "id": "line_57",
+      "kind": "line",
+      "from": 44,
+      "to": 45
+    },
+    {
+      "id": "line_58",
+      "kind": "line",
+      "from": 45,
+      "to": 46
+    },
+    {
+      "id": "line_59",
+      "kind": "line",
+      "from": 45,
+      "to": 47
+    },
+    {
+      "id": "line_60",
+      "kind": "line",
+      "from": 46,
+      "to": 48
+    },
+    {
+      "id": "line_61",
+      "kind": "line",
+      "from": 41,
+      "to": 48
+    },
+    {
+      "id": "line_62",
+      "kind": "line",
+      "from": 41,
+      "to": 48
+    },
+    {
+      "id": "line_63",
+      "kind": "line",
+      "from": 44,
+      "to": 48
+    },
+    {
+      "id": "line_64",
+      "kind": "line",
+      "from": 47,
+      "to": 48
+    },
+    {
+      "id": "line_65",
+      "kind": "line",
+      "from": 48,
+      "to": 49
+    },
+    {
+      "id": "line_66",
+      "kind": "line",
+      "from": 48,
+      "to": 50
+    },
+    {
+      "id": "line_67",
+      "kind": "line",
+      "from": 50,
+      "to": 51
+    },
+    {
+      "id": "line_68",
+      "kind": "line",
+      "from": 51,
+      "to": 52
+    },
+    {
+      "id": "line_69",
+      "kind": "line",
+      "from": 52,
+      "to": 53
+    },
+    {
+      "id": "line_70",
+      "kind": "line",
+      "from": 48,
+      "to": 53
+    },
+    {
+      "id": "line_71",
+      "kind": "line",
+      "from": 48,
+      "to": 53
+    },
+    {
+      "id": "line_72",
+      "kind": "line",
+      "from": 53,
+      "to": 54
+    },
+    {
+      "id": "line_73",
+      "kind": "line",
+      "from": 53,
+      "to": 55
+    },
+    {
+      "id": "line_74",
+      "kind": "line",
+      "from": 54,
+      "to": 55
+    },
+    {
+      "id": "line_75",
+      "kind": "line",
+      "from": 55,
+      "to": 56
+    },
+    {
+      "id": "line_76",
+      "kind": "line",
+      "from": 49,
+      "to": 56
+    },
+    {
+      "id": "line_77",
+      "kind": "line",
+      "from": 55,
+      "to": 57
+    },
+    {
+      "id": "line_78",
+      "kind": "line",
+      "from": 50,
+      "to": 57
+    },
+    {
+      "id": "line_79",
+      "kind": "line",
+      "from": 53,
+      "to": 58
+    },
+    {
+      "id": "line_80",
+      "kind": "line",
+      "from": 55,
+      "to": 58
+    },
+    {
+      "id": "line_81",
+      "kind": "line",
+      "from": 55,
+      "to": 58
+    },
+    {
+      "id": "line_82",
+      "kind": "line",
+      "from": 54,
+      "to": 58
+    },
+    {
+      "id": "line_83",
+      "kind": "line",
+      "from": 58,
+      "to": 59
+    },
+    {
+      "id": "line_84",
+      "kind": "line",
+      "from": 58,
+      "to": 60
+    },
+    {
+      "id": "line_85",
+      "kind": "line",
+      "from": 59,
+      "to": 60
+    },
+    {
+      "id": "line_86",
+      "kind": "line",
+      "from": 59,
+      "to": 61
+    },
+    {
+      "id": "line_87",
+      "kind": "line",
+      "from": 60,
+      "to": 61
+    },
+    {
+      "id": "line_88",
+      "kind": "line",
+      "from": 62,
+      "to": 63
+    },
+    {
+      "id": "line_89",
+      "kind": "line",
+      "from": 37,
+      "to": 64
+    },
+    {
+      "id": "line_90",
+      "kind": "line",
+      "from": 63,
+      "to": 64
+    },
+    {
+      "id": "line_91",
+      "kind": "line",
+      "from": 48,
+      "to": 65
+    },
+    {
+      "id": "line_92",
+      "kind": "line",
+      "from": 48,
+      "to": 65
+    },
+    {
+      "id": "line_93",
+      "kind": "line",
+      "from": 61,
+      "to": 65
+    },
+    {
+      "id": "line_94",
+      "kind": "line",
+      "from": 61,
+      "to": 66
+    },
+    {
+      "id": "line_95",
+      "kind": "line",
+      "from": 65,
+      "to": 66
+    },
+    {
+      "id": "line_96",
+      "kind": "line",
+      "from": 46,
+      "to": 68
+    },
+    {
+      "id": "line_97",
+      "kind": "line",
+      "from": 48,
+      "to": 68
+    },
+    {
+      "id": "line_98",
+      "kind": "line",
+      "from": 68,
+      "to": 69
+    },
+    {
+      "id": "line_99",
+      "kind": "line",
+      "from": 23,
+      "to": 69
+    },
+    {
+      "id": "line_100",
+      "kind": "line",
+      "from": 69,
+      "to": 70
+    },
+    {
+      "id": "line_101",
+      "kind": "line",
+      "from": 23,
+      "to": 71
+    },
+    {
+      "id": "line_102",
+      "kind": "line",
+      "from": 70,
+      "to": 71
+    },
+    {
+      "id": "line_103",
+      "kind": "line",
+      "from": 70,
+      "to": 72
+    },
+    {
+      "id": "line_104",
+      "kind": "line",
+      "from": 69,
+      "to": 73
+    },
+    {
+      "id": "line_105",
+      "kind": "line",
+      "from": 69,
+      "to": 74
+    },
+    {
+      "id": "line_106",
+      "kind": "line",
+      "from": 68,
+      "to": 74
+    },
+    {
+      "id": "line_107",
+      "kind": "line",
+      "from": 73,
+      "to": 74
+    },
+    {
+      "id": "line_108",
+      "kind": "line",
+      "from": 75,
+      "to": 76
+    },
+    {
+      "id": "line_109",
+      "kind": "line",
+      "from": 68,
+      "to": 76
+    },
+    {
+      "id": "line_110",
+      "kind": "line",
+      "from": 74,
+      "to": 76
+    },
+    {
+      "id": "line_111",
+      "kind": "line",
+      "from": 76,
+      "to": 77
+    },
+    {
+      "id": "line_112",
+      "kind": "line",
+      "from": 77,
+      "to": 78
+    },
+    {
+      "id": "line_113",
+      "kind": "line",
+      "from": 76,
+      "to": 79
+    },
+    {
+      "id": "line_114",
+      "kind": "line",
+      "from": 76,
+      "to": 79
+    },
+    {
+      "id": "line_115",
+      "kind": "line",
+      "from": 78,
+      "to": 79
+    },
+    {
+      "id": "line_116",
+      "kind": "line",
+      "from": 76,
+      "to": 81
+    },
+    {
+      "id": "line_117",
+      "kind": "line",
+      "from": 81,
+      "to": 82
+    },
+    {
+      "id": "line_118",
+      "kind": "line",
+      "from": 82,
+      "to": 83
+    },
+    {
+      "id": "line_119",
+      "kind": "line",
+      "from": 82,
+      "to": 84
+    },
+    {
+      "id": "line_120",
+      "kind": "line",
+      "from": 83,
+      "to": 84
+    },
+    {
+      "id": "line_121",
+      "kind": "line",
+      "from": 84,
+      "to": 85
+    },
+    {
+      "id": "line_122",
+      "kind": "line",
+      "from": 84,
+      "to": 87
+    },
+    {
+      "id": "line_123",
+      "kind": "line",
+      "from": 84,
+      "to": 88
+    },
+    {
+      "id": "line_124",
+      "kind": "line",
+      "from": 87,
+      "to": 88
+    },
+    {
+      "id": "line_125",
+      "kind": "line",
+      "from": 88,
+      "to": 89
+    },
+    {
+      "id": "line_126",
+      "kind": "line",
+      "from": 88,
+      "to": 89
+    },
+    {
+      "id": "line_127",
+      "kind": "line",
+      "from": 89,
+      "to": 90
+    },
+    {
+      "id": "line_128",
+      "kind": "line",
+      "from": 88,
+      "to": 91
+    },
+    {
+      "id": "line_129",
+      "kind": "line",
+      "from": 88,
+      "to": 91
+    },
+    {
+      "id": "line_130",
+      "kind": "line",
+      "from": 90,
+      "to": 91
+    },
+    {
+      "id": "line_131",
+      "kind": "line",
+      "from": 91,
+      "to": 92
+    },
+    {
+      "id": "line_132",
+      "kind": "line",
+      "from": 91,
+      "to": 93
+    },
+    {
+      "id": "line_133",
+      "kind": "line",
+      "from": 92,
+      "to": 93
+    },
+    {
+      "id": "line_134",
+      "kind": "line",
+      "from": 93,
+      "to": 94
+    },
+    {
+      "id": "line_135",
+      "kind": "line",
+      "from": 79,
+      "to": 95
+    },
+    {
+      "id": "line_136",
+      "kind": "line",
+      "from": 81,
+      "to": 95
+    },
+    {
+      "id": "line_137",
+      "kind": "line",
+      "from": 93,
+      "to": 95
+    },
+    {
+      "id": "line_138",
+      "kind": "line",
+      "from": 79,
+      "to": 96
+    },
+    {
+      "id": "line_139",
+      "kind": "line",
+      "from": 79,
+      "to": 97
+    },
+    {
+      "id": "line_140",
+      "kind": "line",
+      "from": 79,
+      "to": 98
+    },
+    {
+      "id": "line_141",
+      "kind": "line",
+      "from": 91,
+      "to": 99
+    },
+    {
+      "id": "line_142",
+      "kind": "line",
+      "from": 93,
+      "to": 99
+    },
+    {
+      "id": "line_143",
+      "kind": "line",
+      "from": 94,
+      "to": 95
+    },
+    {
+      "id": "line_144",
+      "kind": "line",
+      "from": 95,
+      "to": 96
+    },
+    {
+      "id": "line_145",
+      "kind": "line",
+      "from": 97,
+      "to": 99
+    },
+    {
+      "id": "line_146",
+      "kind": "line",
+      "from": 98,
+      "to": 99
+    },
+    {
+      "id": "line_147",
+      "kind": "line",
+      "from": 99,
+      "to": 100
+    },
+    {
+      "id": "line_148",
+      "kind": "line",
+      "from": 91,
+      "to": 101
+    },
+    {
+      "id": "line_149",
+      "kind": "line",
+      "from": 100,
+      "to": 101
+    },
+    {
+      "id": "line_150",
+      "kind": "line",
+      "from": 99,
+      "to": 102
+    },
+    {
+      "id": "line_151",
+      "kind": "line",
+      "from": 99,
+      "to": 103
+    },
+    {
+      "id": "line_152",
+      "kind": "line",
+      "from": 102,
+      "to": 103
+    },
+    {
+      "id": "line_153",
+      "kind": "line",
+      "from": 102,
+      "to": 104
+    },
+    {
+      "id": "line_154",
+      "kind": "line",
+      "from": 99,
+      "to": 105
+    },
+    {
+      "id": "line_155",
+      "kind": "line",
+      "from": 103,
+      "to": 104
+    },
+    {
+      "id": "line_156",
+      "kind": "line",
+      "from": 104,
+      "to": 105
+    },
+    {
+      "id": "line_157",
+      "kind": "line",
+      "from": 104,
+      "to": 106
+    },
+    {
+      "id": "line_158",
+      "kind": "line",
+      "from": 104,
+      "to": 107
+    },
+    {
+      "id": "line_159",
+      "kind": "line",
+      "from": 105,
+      "to": 106
+    },
+    {
+      "id": "line_160",
+      "kind": "line",
+      "from": 107,
+      "to": 108
+    },
+    {
+      "id": "line_161",
+      "kind": "line",
+      "from": 102,
+      "to": 109
+    },
+    {
+      "id": "line_162",
+      "kind": "line",
+      "from": 108,
+      "to": 109
+    },
+    {
+      "id": "line_163",
+      "kind": "line",
+      "from": 109,
+      "to": 110
+    },
+    {
+      "id": "line_164",
+      "kind": "line",
+      "from": 109,
+      "to": 111
+    },
+    {
+      "id": "line_165",
+      "kind": "line",
+      "from": 16,
+      "to": 112
+    },
+    {
+      "id": "line_166",
+      "kind": "line",
+      "from": 31,
+      "to": 112
+    },
+    {
+      "id": "line_167",
+      "kind": "line",
+      "from": 31,
+      "to": 113
+    },
+    {
+      "id": "line_168",
+      "kind": "line",
+      "from": 26,
+      "to": 114
+    },
+    {
+      "id": "line_169",
+      "kind": "line",
+      "from": 113,
+      "to": 114
+    },
+    {
+      "id": "line_170",
+      "kind": "line",
+      "from": 11,
+      "to": 116
+    },
+    {
+      "id": "line_171",
+      "kind": "line",
+      "from": 74,
+      "to": 117
+    },
+    {
+      "id": "line_172",
+      "kind": "line",
+      "from": 75,
+      "to": 117
+    },
+    {
+      "id": "trafo_0",
+      "kind": "trafo",
+      "from": 7,
+      "to": 4
+    },
+    {
+      "id": "trafo_1",
+      "kind": "trafo",
+      "from": 25,
+      "to": 24
+    },
+    {
+      "id": "trafo_2",
+      "kind": "trafo",
+      "from": 29,
+      "to": 16
+    },
+    {
+      "id": "trafo_3",
+      "kind": "trafo",
+      "from": 37,
+      "to": 36
+    },
+    {
+      "id": "trafo_4",
+      "kind": "trafo",
+      "from": 62,
+      "to": 58
+    },
+    {
+      "id": "trafo_5",
+      "kind": "trafo",
+      "from": 63,
+      "to": 60
+    },
+    {
+      "id": "trafo_6",
+      "kind": "trafo",
+      "from": 64,
+      "to": 65
+    },
+    {
+      "id": "trafo_7",
+      "kind": "trafo",
+      "from": 64,
+      "to": 67
+    },
+    {
+      "id": "trafo_8",
+      "kind": "trafo",
+      "from": 67,
+      "to": 68
+    },
+    {
+      "id": "trafo_9",
+      "kind": "trafo",
+      "from": 80,
+      "to": 67
+    },
+    {
+      "id": "trafo_10",
+      "kind": "trafo",
+      "from": 80,
+      "to": 79
+    },
+    {
+      "id": "trafo_11",
+      "kind": "trafo",
+      "from": 86,
+      "to": 85
+    },
+    {
+      "id": "trafo_12",
+      "kind": "trafo",
+      "from": 115,
+      "to": 67
+    }
+  ]
+}
