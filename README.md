@@ -4,7 +4,7 @@
 
 ### A grid operations agent that never gets the physics wrong.
 
-**🏆 Winner · E.ON track "Grid Operation Agents" · Energy Hack Munich 2026 · €1,000 prize**
+**🏆 Winner · E.ON track "Grid Operation Agents" · [Energy Hack Munich 2026](https://luma.com/o6r06acc) · €1,000 prize**
 
 ![Winner](https://img.shields.io/badge/Energy_Hack_Munich_2026-Winner_·_%E2%82%AC1000-FFD700?style=for-the-badge&labelColor=1a1a1a)
 ![Track](https://img.shields.io/badge/E.ON-Grid_Operation_Agents-E2001A?style=for-the-badge&labelColor=1a1a1a)
@@ -232,6 +232,6 @@ The `commit_status` in the UI is the solver's verdict, never the model's claim.
 
 <div align="center">
 
-Built by **Eklavya Goyal**, winner of the E.ON track at Energy Hack Munich 2026.
+Built by **Eklavya Goyal**, winner of the E.ON track at [Energy Hack Munich 2026](https://luma.com/o6r06acc).
 
 </div>

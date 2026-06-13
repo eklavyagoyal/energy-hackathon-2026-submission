@@ -1,0 +1,4 @@
+# Vercel needs the FastAPI entrypoint declared explicitly because the app
+# lives at src/api/main.py:app rather than a default top-level location.
+[tool.vercel]
+entrypoint = "src.api.main:app"
