@@ -1,0 +1,11 @@
+# Keep the serverless function bundle small: ship only what the app needs at
+# runtime. fixtures/ and data/ stay (the app serves the frozen replay and may
+# load the PyPSA sample). src/, pyproject.toml, and requirements.txt are required.
+tests/
+demo/
+scripts/
+.github/
+conftest.py
+pytest.ini
+requirements.lock.txt
+*.md
