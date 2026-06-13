@@ -1,4 +1,25 @@
-# Vercel needs the FastAPI entrypoint declared explicitly because the app
-# lives at src/api/main.py:app rather than a default top-level location.
+# Project metadata is required by Vercel's FastAPI builder, which resolves
+# dependencies with `uv` from this file (not requirements.txt). The runtime
+# deps below mirror requirements.txt; test-only deps are intentionally omitted.
+[project]
+name = "warden"
+version = "0.1.0"
+description = "Solver-verified grid operations agent (Energy Hack Munich 2026, E.ON track)"
+requires-python = ">=3.11"
+dependencies = [
+    "pandapower>=2.14",
+    "numba",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+    "anthropic>=0.25",
+    "python-dotenv",
+]
+
+# The repo runs from a src/ layout via `uvicorn src.api.main:app`; it is not an
+# installable package, so tell uv to provision the environment only, not build it.
+[tool.uv]
+package = false
+
 [tool.vercel]
 entrypoint = "src.api.main:app"
