@@ -232,6 +232,6 @@ The `commit_status` in the UI is the solver's verdict, never the model's claim.
 
 <div align="center">
 
-Built by **Eklavya Goyal**, winner of the E.ON track at [Energy Hack Munich 2026](https://luma.com/o6r06acc).
+Built by **Eklavya Goyal** and **Laurentin Harter**, winners of the E.ON track at [Energy Hack Munich 2026](https://luma.com/o6r06acc).
 
 </div>
